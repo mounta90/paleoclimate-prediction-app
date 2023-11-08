@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% if title %}
+    <title>Paleoclimate Prediction - {{ title }}</title>
+    {% else %}
+    <title>Paleoclimate Prediction</title>
+    {% endif %}
+    <link rel="stylesheet" href="{% static 'main_app/styles.css' %}" />
+  </head>
+  <body>
+    <header>
+      <h1>Paleoclimate Prediction</h1>
+    </header>
+    {% block content %}{% endblock %}
+    <footer>
+      <ul>
+        <li>Nishad</li>
+        <li>Matt</li>
+        <li>Omor</li>
+        <li>Irfan</li>
+        <li>Almountassir</li>
+      </ul>
+    </footer>
+  </body>
+</html>
