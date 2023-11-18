@@ -1,0 +1,9 @@
+{% extends 'main_app/base.html' %} {% block content %}
+<main>
+    {% if prediction_title %}
+        <h2>{{ prediction_title }}</h2>
+    {% else %}
+        <h2>Prediction X</h2>
+    {% endif %}
+</main>
+{% endblock content %}

@@ -25,7 +25,7 @@ header {
 }
 
 h1 {
-  color: black;
+  color: #074f57;
   text-align: center;
 }
 
@@ -33,6 +33,52 @@ h1 {
 
 main {
   flex: auto;
+}
+
+main .predictions {
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
+
+main .prediction {
+  min-height: 250px;
+  min-width: 250px;
+  padding: 16px;
+
+  color: white;
+
+  background-color: #074f57;
+  background-size: cover;
+
+  border-radius: 8px;
+
+  text-shadow: 0px 0px 10px black;
+}
+
+main #prediction1 {
+    background-image: url("/static/main_app/images/josefin-HtCgLIDy-2U-unsplash.jpg");
+}
+
+main #prediction2 {
+    background-image: url("/static/main_app/images/sebastian-hans-lkpW4VC_dqI-unsplash.jpg")
+}
+
+main #prediction3 {
+    background-image: url("/static/main_app/images/yousef-espanioly-hbQeCpo-Cp0-unsplash.jpg")
+}
+
+
+main .prediction-a {
+    text-decoration: none;
+    transition: transform 0.25s linear;
+}
+
+main .prediction-a:hover {
+    transform: scale(1.03)
 }
 
 /* -------------------------------------- */
