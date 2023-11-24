@@ -22,11 +22,17 @@ header {
     0px 8px 8px 0px rgba(0, 0, 0, 0.15);
   padding: 1em;
   flex: none;
+
 }
 
-h1 {
+header h1 {
   color: #074f57;
   text-align: center;
+}
+
+h1 a {
+    text-decoration: none;
+    color: inherit;
 }
 
 /* -------------------------------------- */
@@ -59,19 +65,6 @@ main .prediction {
   text-shadow: 0px 0px 10px black;
 }
 
-main #prediction1 {
-    background-image: url("/static/main_app/images/josefin-HtCgLIDy-2U-unsplash.jpg");
-}
-
-main #prediction2 {
-    background-image: url("/static/main_app/images/sebastian-hans-lkpW4VC_dqI-unsplash.jpg")
-}
-
-main #prediction3 {
-    background-image: url("/static/main_app/images/yousef-espanioly-hbQeCpo-Cp0-unsplash.jpg")
-}
-
-
 main .prediction-a {
     text-decoration: none;
     transition: transform 0.25s linear;
@@ -79,6 +72,64 @@ main .prediction-a {
 
 main .prediction-a:hover {
     transform: scale(1.03)
+}
+
+/* -------------------------------------- */
+
+main h2 {
+    display: block;
+    padding: 1em;
+
+    text-align: center;
+}
+
+main .results-section {
+    width: 50vw;
+    height: 50vh;
+    margin: 1em auto;
+
+    background-color: #074f57;
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+}
+
+main .results-section .results-score-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    height: 100%;
+
+}
+
+.results-score-div h3 {
+    color: white;
+    font-weight: bold;
+}
+
+main .results-section .results-graph-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    height: 100%;
+
+}
+
+.results-graph-div .graph-img {
+    width: 90%;
+    height: 75%;
+
+    border-radius: 10px;
+}
+
+main .results-score-div p {
+    color: white;
 }
 
 /* -------------------------------------- */

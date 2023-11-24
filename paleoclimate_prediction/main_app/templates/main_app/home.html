@@ -1,18 +1,24 @@
 {% extends 'main_app/base.html' %} {% block content %}
+{% load static %}
 <main>
     <section class="predictions">
-        <a href="templates/main_app/prediction.html" class="prediction-a">
-            <article class="prediction" id="prediction1">
+        <a href="" class="prediction-a">
+            <article class="prediction" id="prediction-create" style="background-image: url('{% static 'main_app/images/erol-ahmed-aIYFR0vbADk-unsplash.jpg' %}');">
+                <h3>Create Prediction</h3>
+            </article>
+        </a>
+        <a href="{% url 'main-prediction' %}" class="prediction-a">
+            <article class="prediction" id="prediction1" style="background-image: url('{% static 'main_app/images/josefin-HtCgLIDy-2U-unsplash.jpg' %}');">
                 <h3>Prediction 1</h3>
             </article>
         </a>
         <a href="" class="prediction-a">
-            <article class="prediction" id="prediction2">
+            <article class="prediction" id="prediction2" style="background-image: url('{% static 'main_app/images/sebastian-hans-lkpW4VC_dqI-unsplash.jpg' %}');">
                 <h3>Prediction 2</h3>
             </article>
         </a>
         <a href="" class="prediction-a">
-            <article class="prediction" id="prediction3">
+            <article class="prediction" id="prediction3" style="background-image: url(' {% static 'main_app/images/yousef-espanioly-hbQeCpo-Cp0-unsplash.jpg' %} ')">
                 <h3>Prediction 3</h3>
             </article>
         </a>
