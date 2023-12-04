@@ -4,23 +4,43 @@
         <h3>ACTUAL MEASUREMENTS</h3>
         <div>
             <span>ENTHALPY - </span>
-            <span class="climate-prediction">30.12</span>
+            {% if enthalpy %}
+                <span class="climate-prediction">{{ enthalpy }}</span>
+            {% else %}
+                <span class="climate-prediction">?</span>
+            {% endif %}
         </div>
         <div>
             <span>MEAN ANNUAL TEMPERATURE - </span>
-            <span class="climate-prediction">11.2</span>
+            {% if mat %}
+                <span class="climate-prediction">{{ mat }}</span>
+            {% else %}
+                <span class="climate-prediction">?</span>
+            {% endif %}
         </div>
         <div>
             <span>GROWING SEASON PRECIPITATION - </span>
-            <span class="climate-prediction">60</span>
+            {% if gsp %}
+                <span class="climate-prediction">{{ gsp }}</span>
+            {% else %}
+                <span class="climate-prediction">?</span>
+            {% endif %}
         </div>
         <div>
             <span>SPECIFIC HUMIDITY - </span>
-            <span class="climate-prediction">5.9</span>
+            {% if sh %}
+                <span class="climate-prediction">{{ sh }}</span>
+            {% else %}
+                <span class="climate-prediction">?</span>
+            {% endif %}
         </div>
         <div>
             <span>RELATIVE HUMIDITY - </span>
-            <span class="climate-prediction">70</span>
+            {% if rh %}
+                <span class="climate-prediction">{{ rh }}</span>
+            {% else %}
+                <span class="climate-prediction">?</span>
+            {% endif %}
         </div>
     </section>
     <section class="prediction-section">

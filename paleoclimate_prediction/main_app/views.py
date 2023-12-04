@@ -37,13 +37,30 @@ def results(request):
     return render(request=request, template_name="main_app/results.html", context=page_context,)
 
 
-def prediction(request):
+def prediction_penn(request):
     page_context = {
-        "enthalpy_prediction": make_enthalpy_prediction,
-        "mean_annual_temp_prediction": make_mat_prediction,
-        "growing_season_precipitation_prediction": make_gsp_prediction,
-        "specific_humidity_prediction": make_sh_prediction,
-        "relative_humidity_prediction": make_rh_prediction,
+        "enthalpy": 30.12,
+        "mat": 11.2,
+        "gsp": 60,
+        "sh": 5.9,
+        "rh": 70,
+        "enthalpy_prediction": make_enthalpy_prediction_penn,
+        "mean_annual_temp_prediction": make_mat_prediction_penn,
+        "growing_season_precipitation_prediction": make_gsp_prediction_penn,
+        "specific_humidity_prediction": make_sh_prediction_penn,
+        "relative_humidity_prediction": make_rh_prediction_penn,
+    }
+
+    return render(request=request, template_name="main_app/prediction.html", context=page_context)
+
+
+def prediction_wyo(request):
+    page_context = {
+        "enthalpy_prediction": make_enthalpy_prediction_wyo,
+        "mean_annual_temp_prediction": make_mat_prediction_wyo,
+        "growing_season_precipitation_prediction": make_gsp_prediction_wyo,
+        "specific_humidity_prediction": make_sh_prediction_wyo,
+        "relative_humidity_prediction": make_rh_prediction_wyo,
     }
 
     return render(request=request, template_name="main_app/prediction.html", context=page_context)

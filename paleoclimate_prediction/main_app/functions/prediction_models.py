@@ -623,7 +623,7 @@ def train_and_save_rh_model():
     print("Best Model:", best_model, final_scores[best_model])
 
 
-def make_enthalpy_prediction():
+def make_enthalpy_prediction_penn():
     # Import Data
     csv_path = staticfiles_storage.path("main_app/data/data.csv")
     data = pd.read_csv(csv_path)
@@ -640,7 +640,23 @@ def make_enthalpy_prediction():
     return round(enthalpy_prediction, 2)
 
 
-def make_mat_prediction():
+def make_enthalpy_prediction_wyo():
+    # Import Data
+    csv_path = staticfiles_storage.path("main_app/data/kissinger-lakes-wyoming-sample.csv")
+    features = pd.read_csv(csv_path)
+
+    sample = features.values[0][1:].reshape(1, -1)
+
+    model_path = staticfiles_storage.path("main_app/saved_models/best_svr_model")
+    best_svr_model_enthalpy = joblib.load(model_path)
+
+    # Predict the sample from Kissinger Lakes, Wyoming
+    enthalpy_prediction = best_svr_model_enthalpy.predict(sample)[0]
+
+    return round(enthalpy_prediction, 2)
+
+
+def make_mat_prediction_penn():
     # Import Data
     csv_path = staticfiles_storage.path("main_app/data/data.csv")
     data = pd.read_csv(csv_path)
@@ -657,7 +673,23 @@ def make_mat_prediction():
     return round(mat_prediction, 1)
 
 
-def make_sh_prediction():
+def make_mat_prediction_wyo():
+    # Import Data
+    csv_path = staticfiles_storage.path("main_app/data/kissinger-lakes-wyoming-sample.csv")
+    features = pd.read_csv(csv_path)
+
+    sample = features.values[0][1:].reshape(1, -1)
+
+    model_path = staticfiles_storage.path("main_app/saved_models/best_svr_model_mat")
+    best_svr_model_mat = joblib.load(model_path)
+
+    # Predict the sample from Kissinger Lakes, Wyoming
+    mat_prediction = best_svr_model_mat.predict(sample)[0]
+
+    return round(mat_prediction, 1)
+
+
+def make_sh_prediction_penn():
     # Import Data
     csv_path = staticfiles_storage.path("main_app/data/data.csv")
     data = pd.read_csv(csv_path)
@@ -674,7 +706,23 @@ def make_sh_prediction():
     return round(sh_prediction, 1)
 
 
-def make_gsp_prediction():
+def make_sh_prediction_wyo():
+    # Import Data
+    csv_path = staticfiles_storage.path("main_app/data/kissinger-lakes-wyoming-sample.csv")
+    features = pd.read_csv(csv_path)
+
+    sample = features.values[0][1:].reshape(1, -1)
+
+    model_path = staticfiles_storage.path("main_app/saved_models/best_svr_model_sh")
+    best_svr_model_sh = joblib.load(model_path)
+
+    # Predict the sample from Kissinger Lakes, Wyoming
+    sh_prediction = best_svr_model_sh.predict(sample)[0]
+
+    return round(sh_prediction, 1)
+
+
+def make_gsp_prediction_penn():
     # Import Data
     csv_path = staticfiles_storage.path("main_app/data/data.csv")
     data = pd.read_csv(csv_path)
@@ -691,7 +739,23 @@ def make_gsp_prediction():
     return round(gsp_prediction, 0)
 
 
-def make_rh_prediction():
+def make_gsp_prediction_wyo():
+    # Import Data
+    csv_path = staticfiles_storage.path("main_app/data/kissinger-lakes-wyoming-sample.csv")
+    features = pd.read_csv(csv_path)
+
+    sample = features.values[0][1:].reshape(1, -1)
+
+    model_path = staticfiles_storage.path("main_app/saved_models/best_svr_model_gsp")
+    best_svr_model_gsp = joblib.load(model_path)
+
+    # Predict the sample from Kissinger Lakes, Wyoming
+    gsp_prediction = best_svr_model_gsp.predict(sample)[0]
+
+    return round(gsp_prediction, 0)
+
+
+def make_rh_prediction_penn():
     # Import Data
     csv_path = staticfiles_storage.path("main_app/data/data.csv")
     data = pd.read_csv(csv_path)
@@ -703,6 +767,22 @@ def make_rh_prediction():
 
     # Predict the sample from Arendtsville, Pennsylvania
     sample = X[6].reshape(1, -1)
+    rh_prediction = best_svr_model_rh.predict(sample)[0]
+
+    return round(rh_prediction, 0)
+
+
+def make_rh_prediction_wyo():
+    # Import Data
+    csv_path = staticfiles_storage.path("main_app/data/kissinger-lakes-wyoming-sample.csv")
+    features = pd.read_csv(csv_path)
+
+    sample = features.values[0][1:].reshape(1, -1)
+
+    model_path = staticfiles_storage.path("main_app/saved_models/best_svr_model_rh")
+    best_svr_model_rh = joblib.load(model_path)
+
+    # Predict the sample from Kissinger Lakes, Wyoming
     rh_prediction = best_svr_model_rh.predict(sample)[0]
 
     return round(rh_prediction, 0)
