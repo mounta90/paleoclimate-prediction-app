@@ -1,0 +1,26 @@
+{% extends 'main_app/base.html' %} {% block content %}
+<main class="results-main">
+    <section class="results-section">
+        <div class="results-score-div">
+            <h3>Before HPO</h3>
+            {% if prediction_models_before_hpo %}
+                {% for model, model_score in prediction_models_before_hpo.items %}
+                    <p>{{ model }} - {{ model_score }}</p>
+                {% endfor %}
+            {% endif %}
+            <br>
+            <h3>After HPO</h3>
+            {% if prediction_models_after_hpo %}
+                {% for model, model_score in prediction_models_after_hpo.items %}
+                    <p>{{ model }} - {{ model_score }}</p>
+                {% endfor %}
+            {% endif %}
+        </div>
+        <div class="results-graph-div">
+            {% if prediction_graph %}
+                <img src="data:image/png;base64, {{ prediction_graph|safe }}" alt="prediction graph" class="graph-img">
+            {% endif %}
+        </div>
+    </section>
+</main>
+{% endblock content %}

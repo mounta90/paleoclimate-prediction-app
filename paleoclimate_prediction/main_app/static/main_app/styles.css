@@ -39,6 +39,10 @@ h1 a {
 
 main {
   flex: auto;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 main .predictions {
@@ -85,8 +89,8 @@ main h2 {
 
 main .results-section {
     width: 50vw;
-    height: 50vh;
-    margin: 1em auto;
+    height: 60vh;
+    margin: auto auto;
 
     background-color: #074f57;
     border-radius: 10px;
@@ -102,7 +106,7 @@ main .results-section .results-score-div {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 40%;
+    width: 50%;
     height: 100%;
 
 }
@@ -116,7 +120,7 @@ main .results-section .results-graph-div {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 40%;
+    width: 50%;
     height: 100%;
 
 }
@@ -129,6 +133,59 @@ main .results-section .results-graph-div {
 }
 
 main .results-score-div p {
+    color: white;
+    font-size: 12px;
+}
+
+main .prediction-info h3 {
+    text-decoration: underline;
+}
+
+main .prediction-info .climate-prediction{
+    color: orange;
+}
+
+main .prediction-info{
+    height: 60vh;
+    width: 40vw;
+    margin: auto auto;
+
+    background-color: #074f57;
+    border-radius: 10px;
+
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    justify-content: center;
+    align-items:center;
+}
+
+main .prediction-section {
+    width: 40vw;
+    height: 60vh;
+    margin: auto auto;
+
+    background-color: #074f57;
+    border-radius: 10px;
+
+    color: yellow;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    justify-content: center;
+    align-items:center;
+}
+
+main .prediction-section h3 {
+    color: white;
+    text-decoration: underline;
+    margin-bottom: 1em;
+}
+
+main .prediction-section .climate-variable {
     color: white;
 }
 

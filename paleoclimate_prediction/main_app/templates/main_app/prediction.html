@@ -1,22 +1,56 @@
 {% extends 'main_app/base.html' %} {% block content %}
-<main>
-    {% if prediction_title %}
-        <h2>{{ prediction_title }}</h2>
-    {% else %}
-        <h2>Prediction X</h2>
-    {% endif %}
-    <section class="results-section">
-        <div class="results-score-div">
-            <h3>Prediction Score</h3>
-            {% if prediction_result %}
-                <p>{{ prediction_result }}</p>
-            {% endif %}
+<main class="prediction-main">
+    <section class="prediction-info">
+        <h3>ACTUAL MEASUREMENTS</h3>
+        <div>
+            <span>ENTHALPY - </span>
+            <span class="climate-prediction">30.12</span>
         </div>
-        <div class="results-graph-div">
-            {% if prediction_graph %}
-                <img src="data:image/png;base64, {{ prediction_graph|safe }}" alt="prediction graph" class="graph-img">
-            {% endif %}
+        <div>
+            <span>MEAN ANNUAL TEMPERATURE - </span>
+            <span class="climate-prediction">11.2</span>
         </div>
+        <div>
+            <span>GROWING SEASON PRECIPITATION - </span>
+            <span class="climate-prediction">60</span>
+        </div>
+        <div>
+            <span>SPECIFIC HUMIDITY - </span>
+            <span class="climate-prediction">5.9</span>
+        </div>
+        <div>
+            <span>RELATIVE HUMIDITY - </span>
+            <span class="climate-prediction">70</span>
+        </div>
+    </section>
+    <section class="prediction-section">
+        <h3>PREDICTIONS (rounded)</h3>
+        {% if enthalpy_prediction %}
+            <div>
+                <span class="climate-variable">ENTHALPY - </span><span>{{ enthalpy_prediction }}</span>
+            </div>
+        {% endif %}
+        {% if mean_annual_temp_prediction %}
+            <div>
+                <span class="climate-variable">MEAN ANNUAL TEMPERATURE - </span><span>{{ mean_annual_temp_prediction }}</span>
+            </div>
+        {% endif %}
+        {% if growing_season_precipitation_prediction %}
+            <div>
+                <span class="climate-variable">GROWING SEASON PRECIPITATION - </span>
+                <span>{{ growing_season_precipitation_prediction }}</span>
+            </div>
+        {% endif %}
+        {% if specific_humidity_prediction %}
+            <div>
+                <span class="climate-variable">SPECIFIC HUMIDITY - </span><span>{{ specific_humidity_prediction }}</span>
+            </div>
+        {% endif %}
+        {% if relative_humidity_prediction %}
+            <div>
+                <span class="climate-variable">RELATIVE HUMIDITY - </span><span>{{ relative_humidity_prediction }}</span>
+            </div>
+        {% endif %}
     </section>
 </main>
 {% endblock content %}
