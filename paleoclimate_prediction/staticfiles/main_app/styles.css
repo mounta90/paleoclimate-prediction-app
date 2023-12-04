@@ -1,0 +1,210 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Mulish";
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* -------------------------------------- */
+
+header {
+  background-color: white;
+  box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.15),
+    0px 2px 2px 0px rgba(0, 0, 0, 0.15), 0px 4px 4px 0px rgba(0, 0, 0, 0.15),
+    0px 8px 8px 0px rgba(0, 0, 0, 0.15);
+  padding: 1em;
+  flex: none;
+
+}
+
+header h1 {
+  color: #074f57;
+  text-align: center;
+}
+
+h1 a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* -------------------------------------- */
+
+main {
+  flex: auto;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main .predictions {
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
+
+main .prediction {
+  min-height: 250px;
+  min-width: 250px;
+  padding: 16px;
+
+  color: white;
+
+  background-color: #074f57;
+  background-size: cover;
+
+  border-radius: 8px;
+
+  text-shadow: 0px 0px 10px black;
+}
+
+main .prediction-a {
+    text-decoration: none;
+    transition: transform 0.25s linear;
+}
+
+main .prediction-a:hover {
+    transform: scale(1.03)
+}
+
+/* -------------------------------------- */
+
+main h2 {
+    display: block;
+    padding: 1em;
+
+    text-align: center;
+}
+
+main .results-section {
+    width: 50vw;
+    height: 60vh;
+    margin: auto auto;
+
+    background-color: #074f57;
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+}
+
+main .results-section .results-score-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+
+}
+
+.results-score-div h3 {
+    color: white;
+    font-weight: bold;
+}
+
+main .results-section .results-graph-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+
+}
+
+.results-graph-div .graph-img {
+    width: 90%;
+    height: 75%;
+
+    border-radius: 10px;
+}
+
+main .results-score-div p {
+    color: white;
+    font-size: 12px;
+}
+
+main .prediction-info h3 {
+    text-decoration: underline;
+}
+
+main .prediction-info .climate-prediction{
+    color: orange;
+}
+
+main .prediction-info{
+    height: 60vh;
+    width: 40vw;
+    margin: auto auto;
+
+    background-color: #074f57;
+    border-radius: 10px;
+
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    justify-content: center;
+    align-items:center;
+}
+
+main .prediction-section {
+    width: 40vw;
+    height: 60vh;
+    margin: auto auto;
+
+    background-color: #074f57;
+    border-radius: 10px;
+
+    color: yellow;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    justify-content: center;
+    align-items:center;
+}
+
+main .prediction-section h3 {
+    color: white;
+    text-decoration: underline;
+    margin-bottom: 1em;
+}
+
+main .prediction-section .climate-variable {
+    color: white;
+}
+
+/* -------------------------------------- */
+
+footer {
+  background-color: black;
+  color: white;
+  padding: 1em;
+  flex: none;
+}
+
+footer ul {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+}
+
+footer ul li {
+  flex: 1;
+  text-align: center;
+}
