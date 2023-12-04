@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-a#6xvy=w=iu&8%azh(3%z47iuu$&_@m8c7%y=d6^fh+pz1dt%5"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     'paleoclimate-prediction-django-app.onrender.com',
